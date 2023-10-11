@@ -1,6 +1,3 @@
-// pages/api/fetchData.ts
-
-import { NextApiRequest, NextApiResponse } from 'next';
 import 'firebase/firestore';
 import {doc, getDoc} from 'firebase/firestore';
 import {NextResponse} from "next/server";
@@ -15,7 +12,7 @@ export async function GET(request: Request) {
         const documentSnapshot = await getDoc(ref);
         const data = documentSnapshot.data();
 
-        return NextResponse.json({data}, {status: 200})
+        return NextResponse.json(data, {status: 200})
     } catch (error) {
         console.error('Error fetching data:', error);
         return NextResponse.json({error: 'Error fetching data'}, {status: 500})
