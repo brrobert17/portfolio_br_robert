@@ -8,6 +8,7 @@ export default async () => {
                     "Content-Type": "application/json",
                 }})
         const result =  await response.json();
+        console.log("response"+response)
         dd = result.data.name;
     } catch (e) {
         console.log("error fetch front"+e)
