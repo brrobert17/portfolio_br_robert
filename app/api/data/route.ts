@@ -12,12 +12,7 @@ export async function GET(request: Request) {
         const documentSnapshot = await getDoc(ref);
         const data = documentSnapshot.data();
 
-        if (data){
-            return Response.json({data})
-        } else {
-            console.error('Error fetching data: fs');
-            return NextResponse.json({error: "fail"})
-        }
+            return NextResponse.json({data})
     } catch (error) {
         console.error('Error fetching data:', error);
         return NextResponse.json({error: 'Error fetching data'})
