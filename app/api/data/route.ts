@@ -13,7 +13,7 @@ export async function GET(request: Request) {
         const data = documentSnapshot.data();
 
         if (data){
-            return NextResponse.json({data})
+            return Response.json({data})
         } else {
             console.error('Error fetching data: fs');
             return NextResponse.json({error: "fail"})
