@@ -1,8 +1,11 @@
 import styles from './page.module.css'
+const fetch1 = async () => {
+    const response = await fetch('http://localhost:3000/api/data',{cache: "no-cache"})
+    return  await response.json();
+}
 
 export default async function Home() {
-    const response = await fetch('http://localhost:3000/api/data',{cache: "no-cache"})
-    const result = await response.json();
+    const result = await fetch1();
     return (
         <main className={styles.main}>
             <h1>Hello {result.name}!</h1>
