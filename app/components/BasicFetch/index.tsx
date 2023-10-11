@@ -4,7 +4,6 @@ export default async () => {
         method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             }})
     const result =  await response.json();
     return(<h1>Hello {result.name}!</h1>);
